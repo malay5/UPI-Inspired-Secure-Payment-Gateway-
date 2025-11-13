@@ -1,0 +1,118 @@
+2025-04-19 14:41:47,742 - INFO - Gateway came online on port 50099
+2025-04-19 14:47:13,794 - INFO - Request received: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:61165', 'timestamp': 1745054233.79421}
+2025-04-19 14:47:13,854 - ERROR - RPC failed: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:61165', 'error_code': 'UNKNOWN', 'error_message': 'Exception calling application: Protocol message RegisterResponse has no "success" field.'}
+2025-04-19 14:47:13,854 - ERROR - Exception calling application: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNKNOWN
+	details = "Exception calling application: Protocol message RegisterResponse has no "success" field."
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"Exception calling application: Protocol message RegisterResponse has no \"success\" field.", grpc_status:2, created_time:"2025-04-19T09:17:13.831661+00:00"}"
+>
+Traceback (most recent call last):
+  File "D:\IIITH\SEM2\DS practicals\assignment2\test\lib\site-packages\grpc\_server.py", line 610, in _call_behavior
+    response_or_iterator = behavior(argument, context)
+  File "D:\IIITH\SEM2\DS practicals\assignment2\test\lib\site-packages\grpc_interceptor\server.py", line 63, in invoke_intercept_method
+    return self.intercept(
+  File "gateway_server.py", line 58, in intercept
+    response = method(request, context)
+  File "gateway_server.py", line 119, in RegisterAccount
+    response = auth_stub.RegisterAccount(request)
+  File "D:\IIITH\SEM2\DS practicals\assignment2\test\lib\site-packages\grpc\_channel.py", line 1181, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "D:\IIITH\SEM2\DS practicals\assignment2\test\lib\site-packages\grpc\_channel.py", line 1006, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNKNOWN
+	details = "Exception calling application: Protocol message RegisterResponse has no "success" field."
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"Exception calling application: Protocol message RegisterResponse has no \"success\" field.", grpc_status:2, created_time:"2025-04-19T09:17:13.831661+00:00"}"
+>
+2025-04-19 14:48:47,318 - INFO - Request received: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:61165', 'timestamp': 1745054327.3181424}
+2025-04-19 14:48:47,322 - INFO - Response sent: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:61165', 'duration': '0.004s', 'status': 'OK'}
+2025-04-19 14:48:59,823 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61165', 'timestamp': 1745054339.8235898}
+2025-04-19 14:48:59,825 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61165', 'duration': '0.002s', 'status': 'OK'}
+2025-04-19 14:51:05,941 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61165', 'timestamp': 1745054465.9418018}
+2025-04-19 14:51:05,943 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61165', 'duration': '0.002s', 'status': 'OK'}
+2025-04-19 14:51:16,436 - INFO - Request received: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61165', 'timestamp': 1745054476.4364579}
+2025-04-19 14:51:16,440 - INFO - Response sent: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61165', 'duration': '0.004s', 'status': 'OK'}
+2025-04-19 14:54:23,005 - INFO - Request received: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:61264', 'timestamp': 1745054663.0052052}
+2025-04-19 14:54:25,317 - ERROR - RPC failed: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:61264', 'error_code': 'UNAVAILABLE', 'error_message': 'failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50057: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)'}
+2025-04-19 14:54:25,317 - ERROR - Exception calling application: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50057: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.
+ -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-04-19T09:24:25.2932335+00:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50057: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)"}"
+>
+Traceback (most recent call last):
+  File "D:\IIITH\SEM2\DS practicals\assignment2\test\lib\site-packages\grpc\_server.py", line 610, in _call_behavior
+    response_or_iterator = behavior(argument, context)
+  File "D:\IIITH\SEM2\DS practicals\assignment2\test\lib\site-packages\grpc_interceptor\server.py", line 63, in invoke_intercept_method
+    return self.intercept(
+  File "gateway_server.py", line 58, in intercept
+    response = method(request, context)
+  File "gateway_server.py", line 119, in RegisterAccount
+    response = auth_stub.RegisterAccount(request)
+  File "D:\IIITH\SEM2\DS practicals\assignment2\test\lib\site-packages\grpc\_channel.py", line 1181, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "D:\IIITH\SEM2\DS practicals\assignment2\test\lib\site-packages\grpc\_channel.py", line 1006, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50057: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.
+ -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-04-19T09:24:25.2932335+00:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:50057: ConnectEx: Connection refused (No connection could be made because the target machine actively refused it.\r\n -- 10061)"}"
+>
+2025-04-19 14:54:42,829 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61264', 'timestamp': 1745054682.829136}
+2025-04-19 14:54:42,832 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61264', 'duration': '0.003s', 'status': 'OK'}
+2025-04-19 14:54:58,231 - INFO - Request received: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:61264', 'timestamp': 1745054698.2312064}
+2025-04-19 14:54:58,234 - INFO - Response sent: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:61264', 'duration': '0.003s', 'status': 'OK'}
+2025-04-19 14:56:23,477 - INFO - Request received: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61165', 'timestamp': 1745054783.4772952}
+2025-04-19 14:56:23,481 - INFO - Response sent: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61165', 'duration': '0.004s', 'status': 'OK'}
+2025-04-19 14:56:48,711 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61264', 'timestamp': 1745054808.711048}
+2025-04-19 14:56:48,714 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61264', 'duration': '0.002s', 'status': 'OK'}
+2025-04-19 14:57:12,228 - INFO - Request received: {'method': 'ProcessBank', 'client': 'ipv6:%5B::1%5D:61264', 'timestamp': 1745054832.2279053, 'amount': 200.0, 'from_bank': 'bank_b', 'to_bank': 'bank_a'}
+2025-04-19 14:57:12,595 - INFO - Response sent: {'method': 'ProcessBank', 'client': 'ipv6:%5B::1%5D:61264', 'duration': '0.367s', 'status': 'OK', 'success': True, 'message': 'Payment Successful'}
+2025-04-19 14:57:31,273 - INFO - Request received: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61165', 'timestamp': 1745054851.2736497}
+2025-04-19 14:57:31,282 - INFO - Response sent: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61165', 'duration': '0.009s', 'status': 'OK'}
+2025-04-19 14:57:44,574 - INFO - Gateway came online on port 50099
+2025-04-19 14:58:07,134 - INFO - Gateway came online on port 50099
+2025-04-19 14:58:16,632 - INFO - Request received: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61336', 'timestamp': 1745054896.6323373}
+2025-04-19 14:58:16,645 - INFO - Response sent: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61336', 'duration': '0.013s', 'status': 'OK'}
+2025-04-19 15:22:43,883 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61708', 'timestamp': 1745056363.8836966}
+2025-04-19 15:22:43,885 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:61708', 'duration': '0.002s', 'status': 'OK'}
+2025-04-19 15:23:12,529 - INFO - Request received: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61708', 'timestamp': 1745056392.529667}
+2025-04-19 15:23:12,533 - INFO - Response sent: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:61708', 'duration': '0.003s', 'status': 'OK'}
+2025-04-19 15:24:47,652 - INFO - Gateway came online on port 50099
+2025-04-19 15:31:26,069 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:62030', 'timestamp': 1745056886.0690958}
+2025-04-19 15:31:26,080 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:62030', 'duration': '0.010s', 'status': 'OK'}
+2025-04-19 15:31:43,933 - INFO - Gateway came online on port 50099
+2025-04-19 15:31:52,840 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:62032', 'timestamp': 1745056912.840529}
+2025-04-19 15:31:52,850 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:62032', 'duration': '0.010s', 'status': 'OK'}
+2025-04-19 15:32:52,097 - INFO - Request received: {'method': 'ProcessBank', 'client': 'ipv6:%5B::1%5D:62032', 'timestamp': 1745056972.097025, 'amount': 5.0, 'from_bank': 'bank_a', 'to_bank': 'bank_b'}
+2025-04-19 15:32:52,223 - INFO - Response sent: {'method': 'ProcessBank', 'client': 'ipv6:%5B::1%5D:62032', 'duration': '0.126s', 'status': 'OK', 'success': True, 'message': 'Payment Successful'}
+2025-04-19 15:34:21,721 - INFO - Gateway came online on port 50099
+2025-04-19 15:34:29,702 - INFO - Request received: {'method': 'ProcessBank', 'client': 'ipv4:127.0.0.1:62068', 'timestamp': 1745057069.702629, 'amount': 30.0, 'from_bank': 'bank_a', 'to_bank': 'bank_b'}
+2025-04-19 15:34:29,741 - INFO - Response sent: {'method': 'ProcessBank', 'client': 'ipv4:127.0.0.1:62068', 'duration': '0.039s', 'status': 'OK', 'success': True, 'message': 'Payment Successful'}
+2025-04-19 15:34:47,000 - INFO - Request received: {'method': 'GetBalance', 'client': 'ipv4:127.0.0.1:62068', 'timestamp': 1745057087.0003288}
+2025-04-19 15:34:47,005 - INFO - Response sent: {'method': 'GetBalance', 'client': 'ipv4:127.0.0.1:62068', 'duration': '0.005s', 'status': 'OK'}
+2025-04-19 16:43:39,445 - INFO - Gateway came online on port 50099
+2025-04-19 16:45:32,900 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:50261', 'timestamp': 1745061332.9003034}
+2025-04-19 16:45:32,911 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:50261', 'duration': '0.012s', 'status': 'OK'}
+2025-04-19 16:45:51,851 - INFO - Request received: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:50261', 'timestamp': 1745061351.8514245}
+2025-04-19 16:45:51,857 - INFO - Response sent: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:50261', 'duration': '0.006s', 'status': 'OK'}
+2025-04-19 16:46:06,707 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:50261', 'timestamp': 1745061366.707826}
+2025-04-19 16:46:06,709 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:50261', 'duration': '0.002s', 'status': 'OK'}
+2025-04-19 16:46:17,706 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:50261', 'timestamp': 1745061377.7067487}
+2025-04-19 16:46:17,708 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:50261', 'duration': '0.002s', 'status': 'OK'}
+2025-04-19 16:46:32,123 - INFO - Request received: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:50261', 'timestamp': 1745061392.1221623}
+2025-04-19 16:46:32,221 - INFO - Response sent: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:50261', 'duration': '0.006s', 'status': 'OK'}
+2025-04-19 16:48:23,743 - INFO - Request received: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:50300', 'timestamp': 1745061503.7437277}
+2025-04-19 16:48:23,747 - INFO - Response sent: {'method': 'RegisterAccount', 'client': 'ipv6:%5B::1%5D:50300', 'duration': '0.003s', 'status': 'OK'}
+2025-04-19 16:48:46,490 - INFO - Request received: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:50300', 'timestamp': 1745061526.4902935}
+2025-04-19 16:48:46,493 - INFO - Response sent: {'method': 'Login', 'client': 'ipv6:%5B::1%5D:50300', 'duration': '0.003s', 'status': 'OK'}
+2025-04-19 16:49:17,841 - INFO - Request received: {'method': 'ProcessBank', 'client': 'ipv6:%5B::1%5D:50300', 'timestamp': 1745061557.8417244, 'amount': 100.0, 'from_bank': 'bank_b', 'to_bank': 'bank_a'}
+2025-04-19 16:49:18,226 - INFO - Response sent: {'method': 'ProcessBank', 'client': 'ipv6:%5B::1%5D:50300', 'duration': '0.384s', 'status': 'OK', 'success': True, 'message': 'Payment Successful'}
+2025-04-19 16:49:33,488 - INFO - Request received: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:50300', 'timestamp': 1745061573.4889338}
+2025-04-19 16:49:33,493 - INFO - Response sent: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:50300', 'duration': '0.005s', 'status': 'OK'}
+2025-04-19 16:51:32,729 - INFO - Gateway came online on port 50099
+2025-04-19 16:51:47,842 - INFO - Request received: {'method': 'ProcessBank', 'client': 'ipv6:%5B::1%5D:50417', 'timestamp': 1745061707.842254, 'amount': 200.0, 'from_bank': 'bank_b', 'to_bank': 'bank_a'}
+2025-04-19 16:51:47,943 - INFO - Response sent: {'method': 'ProcessBank', 'client': 'ipv6:%5B::1%5D:50417', 'duration': '0.102s', 'status': 'OK', 'success': True, 'message': 'Payment Successful'}
+2025-04-19 16:52:41,003 - INFO - Request received: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:50417', 'timestamp': 1745061761.0030003}
+2025-04-19 16:52:41,013 - INFO - Response sent: {'method': 'GetBalance', 'client': 'ipv6:%5B::1%5D:50417', 'duration': '0.011s', 'status': 'OK'}

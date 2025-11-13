@@ -1,0 +1,7 @@
+2025-04-19 14:47:13,829 - ERROR - Exception calling application: Protocol message RegisterResponse has no "success" field.
+Traceback (most recent call last):
+  File "D:\IIITH\SEM2\DS practicals\assignment2\test\lib\site-packages\grpc\_server.py", line 610, in _call_behavior
+    response_or_iterator = behavior(argument, context)
+  File "bank_server.py", line 160, in RegisterAccount
+    return auth_pb2.RegisterResponse(
+ValueError: Protocol message RegisterResponse has no "success" field.

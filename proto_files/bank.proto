@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+message Account{
+    string number=1;
+    double balance=2;
+    string owner=3;
+    string bank_name=4;
+    string key = 5;  // Added for authentication
+}
+
+message Transaction{
+    string id=1;
+    string from_=2;
+    string from_bank=3;
+    string to=4;
+    string to_bank=5;
+    string key=6;
+    double amount=7;
+    int64 timestamp=8;
+}
+
+service BankService{
+    rpc Prepare(Transaction) returns (PrepareResponse);
+    rpc Commit(Transaction) returns (OperationResponse);
+    rpc Abort(Transaction) returns (OperationResponse);
+    rpc GetBalance(Account) returns (BalanceResponse);
+    
+}
+
+
+message PrepareResponse{
+    bool can_commit=1;
+}
+
+message OperationResponse{
+    bool success=1;
+}
+message BalanceResponse{
+    double balance=1;
+    bool error=2;
+    string message=3;
+}

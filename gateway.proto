@@ -1,0 +1,31 @@
+syntax="proto3";
+
+import "auth.proto";
+import "bank.proto";
+
+service GatewayService{
+    rpc ProcessBank(Transaction) returns (PaymentResponse);
+    rpc GetBalance(Account) returns (BalanceResponse);
+    rpc RegisterAccount (RegisterRequest) returns (RegisterResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc HealthCheck(healthRequest) returns (healthResponse);
+}
+
+message healthRequest{
+    bool isUp=1;
+}
+
+
+message healthResponse{
+    bool up=1;
+}
+
+message PaymentResponse{
+    bool success=1;
+    string message=2;
+}
+
+message TransactionResponse {
+    bool success = 1;
+    string message = 2;
+}
