@@ -12,7 +12,7 @@
 
 ## 🏗 System Architecture
 
-[cite\_start]The system is composed of three distinct gRPC-based components[cite: 6]:
+The system is composed of three distinct gRPC-based components[cite: 6]:
 
 ### 1\. Bank Servers
 
